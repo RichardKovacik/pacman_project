@@ -1,5 +1,7 @@
 package sk.fri.uniza.bytosti;
 
-public interface IPohybovatelny {
-    public void tik();
+import sk.fri.uniza.exceptions.NezijeException;
+
+public interface IZomritelny {
+    public void tik() throws NezijeException;
 }
