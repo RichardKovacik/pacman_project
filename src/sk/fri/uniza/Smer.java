@@ -3,7 +3,7 @@ package sk.fri.uniza;
 import java.util.Random;
 
 public enum Smer {
-    LEFT("l"),
+    LEFT("L"),
     RIGHT("R"),
     UP("U"),
     DOWN("D");
