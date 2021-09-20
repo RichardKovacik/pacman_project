@@ -22,8 +22,8 @@ public enum Smer {
         Pozicia novaPos = new Pozicia(stara.getX(), stara.getY());
 
         switch (this) {
-            case UP -> novaPos.setY(novaPos.getY() + 1);
-            case DOWN -> novaPos.setY(novaPos.getY() - 1);
+            case UP -> novaPos.setY(novaPos.getY() - 1);
+            case DOWN -> novaPos.setY(novaPos.getY() + 1);
             case LEFT -> novaPos.setX(novaPos.getX() - 1);
             case RIGHT -> novaPos.setX(novaPos.getX() + 1);
         }

@@ -13,7 +13,6 @@ class SmerTest {
         for (Smer smer : Smer.values()) {
             if (smer.equals(nahodny)){
                 Assertions.assertEquals(smer, nahodny);
-                return;
             }
         }
 

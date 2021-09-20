@@ -2,7 +2,7 @@ package sk.fri.uniza.bytosti;
 
 import sk.fri.uniza.Pozicia;
 import sk.fri.uniza.Smer;
-import sk.fri.uniza.exceptions.MimoPlochyExsception;
+import sk.fri.uniza.exceptions.NedovolPohnutException;
 import sk.fri.uniza.exceptions.NezijeException;
 
 public class PacMan extends Bytost {
@@ -12,27 +12,25 @@ public class PacMan extends Bytost {
     }
 
     //metoda skontroluje koliziu s duchom
-    public boolean jeKoliziaSDuchom(Duch duch) {
+    public void skonrolujDucha(Duch duch) {
 
         if (this.getPozicia().getX() == duch.getPozicia().getX() &&
             this.getPozicia().getY() == duch.getPozicia().getY()) {
-            this.zivot --;
-            return true;
+            duch.zivot = 0;
         }
-
-        return false;
     }
-    public void zmenPoziciu(Smer smer) throws MimoPlochyExsception {
-        Pozicia novaPos = new Pozicia(this.getPozicia().getX(), this.getPozicia().getY());
 
-        switch (smer) {
-            case UP -> novaPos.setY(novaPos.getY() + 1);
-            case DOWN -> novaPos.setY(novaPos.getY() - 1);
-            case LEFT -> novaPos.setX(novaPos.getX() - 1);
-            case RIGHT -> novaPos.setX(novaPos.getX() + 1);
+    public void posunSa(Smer smer) throws NedovolPohnutException {
+        Pozicia nova = smer.vratNovuPoziciu(this.pozicia);
+//        //skotrolujem ci mi nevyhodi vynimku
+//        this.skontrolujNovuPozicu(this, nova);
+//        //ak je vsetko v poriadku nastavim novu poziciu
+//        this.setPozicia(nova);
+
+        if (this.jeSpravnaPozicia(nova)){
+            this.setPozicia(nova);
         }
-        this.skontrolujNovuPozicu(novaPos);
-        this.setPozicia(novaPos);
+
     }
 
     @Override
