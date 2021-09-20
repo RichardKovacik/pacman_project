@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="939c9e54-4c43-43cd-b4dd-d8d47b1e5d12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/HraciaPlocha.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/Pozicia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/Smer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/bytosti/Bytost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/bytosti/Duch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/bytosti/IZomritelny.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/bytosti/PacMan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/exceptions/MimoPlochyExsception.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sk/fri/uniza/exceptions/NezijeException.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1yM6uDYgTZEtU41zEwMMDPwcpAu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="939c9e54-4c43-43cd-b4dd-d8d47b1e5d12" name="Default Changelist" comment="" />
+      <created>1632049331218</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632049331218</updated>
+      <workItem from="1632049332732" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

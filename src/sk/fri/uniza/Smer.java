@@ -17,8 +17,8 @@ public enum Smer {
     public String getRepre() {
         return repre;
     }
-   public Smer dajNahodnySmer() {
-        Smer smery[] = Smer.values();
+   public static Smer dajNahodnySmer() {
+        Smer[] smery = Smer.values();
         Random random = new Random();
         return smery[random.nextInt(4)];
    }
