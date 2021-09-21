@@ -4,9 +4,9 @@ import sk.fri.uniza.bytosti.Bytost;
 import sk.fri.uniza.bytosti.Duch;
 import sk.fri.uniza.bytosti.PacMan;
 import sk.fri.uniza.exceptions.NedovolPohnutException;
-import sk.fri.uniza.exceptions.NezijeException;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Bludisko {
     public static final int SIRKA = 10;
@@ -46,31 +46,43 @@ public class Bludisko {
     }
     //pridaj bytost na danu poziciu
     public void pridajBytost(Bytost bytost) {
+        if (bytost == null) {
+            throw new IllegalStateException();
+        }
         this.bytosti.add(bytost);
         this.mapa[bytost.getPozicia().getY()][bytost.getPozicia().getX()] = bytost.getReprezentacia();
     }
-    public void posunPackama(Smer smer) throws NedovolPohnutException {
+    //metoda posunie packamana a skotroluje na novej pozici ducha
+    public void posunPackama(Smer smer){
         for (Bytost b : this.bytosti) {
             if (b instanceof  PacMan) {
-                ((PacMan) b).posunSa(smer);
+                try {
+                    ((PacMan) b).posunSa(smer);
+
+                } catch (NedovolPohnutException e){
+                    System.out.println(e.getMessage());
+                }
                 return;
             }
         }
     }
-    public void tik() throws NezijeException, NedovolPohnutException {
-        //update game state, positions etc.
+    public void tik(){
         this.vytvorPrazdnu();
         this.kotrolaKolizii();
+        this.odstranMrtveBytosti();
 
         for (Bytost b : this.bytosti) {
             b.tik();
             if (b instanceof Duch){
                 ((Duch) b).posunSaNahodne();
+
             }
             mapa[b.getPozicia().getY()][b.getPozicia().getX()] = b.getReprezentacia();
         }
 
     }
+
+    //skotroluje ci packman nie je v konflikte s duchom
     private void kotrolaKolizii(){
         for (Bytost b : this.bytosti) {
             if (b instanceof  PacMan) {
@@ -81,6 +93,18 @@ public class Bludisko {
                     }
                 }
                 return;
+            }
+        }
+    }
+    private void odstranMrtveBytosti(){
+        Iterator<Bytost> bytostIterator = this.bytosti.iterator();
+
+        while (bytostIterator.hasNext()){
+            Bytost b = bytostIterator.next();
+            
+            if (b.getZivot() <= 0){
+                b.tik();
+                bytostIterator.remove();
             }
         }
     }

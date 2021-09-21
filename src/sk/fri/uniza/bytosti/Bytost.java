@@ -2,9 +2,8 @@ package sk.fri.uniza.bytosti;
 
 import sk.fri.uniza.Bludisko;
 import sk.fri.uniza.Pozicia;
-import sk.fri.uniza.exceptions.NedovolPohnutException;
 
-public abstract class Bytost implements IZomritelny {
+public abstract class Bytost {
     protected Pozicia pozicia;
     protected int zivot;
     private String reprezentacia;
@@ -14,21 +13,14 @@ public abstract class Bytost implements IZomritelny {
         this.zivot = 3;
     }
 
-    public boolean jeSpravnaPozicia(Pozicia pozicia) /*throws NedovolPohnutException*/ {
+    public boolean jeSpravnaPozicia(Pozicia pozicia) {
         if ((pozicia.getX() <= 0 || pozicia.getX() >= Bludisko.SIRKA-1) ||
                 (pozicia.getY() <= 0 || pozicia.getY() >= Bludisko.VYSKA -1)) {
             return false;
-
-//            if (bytost instanceof Duch){
-//                throw new NedovolPohnutException("Duch sa nedokazal pohnut");
-//            }else {
-//                throw new NedovolPohnutException("PackMan sa nedokazal pohnut");
-//
-//            }
-
         }
         return true;
     }
+    public abstract void tik();
 
     public Pozicia getPozicia() {
         return pozicia;
